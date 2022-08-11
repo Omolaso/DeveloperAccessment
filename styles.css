@@ -17,9 +17,9 @@
     justify-content: space-around;
     flex-wrap: wrap;
     min-height: 100vh;
-    padding: 1rem;
-    /* border: 1px solid; */
 }
+
+/* FIRST-SECTION */
 
 .container .first-section{
     display: flex;
@@ -27,19 +27,23 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    height: 600px;
+    min-height: 80vh;
+    flex: 0.7;
     /* border: 1px solid; */
+    margin-bottom: 5rem;
 }
 
 .container .first-section .text h2{
     color: var(--lightBlue);
-    padding-bottom: 0.2rem;
+    margin-bottom: 0.2rem;
+    font-weight: 1500;
 }
 
 .container .first-section .text p{
     color: var(--darkBlue);
     line-height: 18px;
 }
+
 
 .container .first-section .img #image1{
     width: 250px;
@@ -49,41 +53,183 @@
 .container .first-section .footer{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* border: 1px solid; */
+    width: 100%;
+    max-width: 700px;
 }
 
 .container .first-section .footer #footer-header{
     color: var(--lightBlue);
-    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
     letter-spacing: 2px;
 }
 
 .container .first-section .footer .icons{
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    /* justify-content: space-around; */
-    border: 1px solid;
-    /* width: 150%; */
-}
-
-.container .first-section .footer .icons #icon-div{
-    margin-right: 10px;
+    justify-content: space-around;
+    width: 50%;
 }
 
 .container .first-section .footer .icons #icon-div #icon{
     border: 1px solid var(--lightBlue);
-    /* padding: 10px; */
+    padding: 2px;
     border-radius: 50%;
     margin-bottom: 0.5rem;
+    width: 40px;
+    height: auto;
 }
 
 .container .first-section .footer .icons #icon-div h6{
     color: var(--darkBlue);
 }
 
+
 /* SECONDSECTION */
 
 .container .second-section{
-    /* height: 500px; */
-    /* border: 1px solid; */
+    padding: 1.5rem 0rem;
+    min-height: 100vh;
+    flex: 0.7;
+    border: 1px solid #ccc;
+    color: var(--darkBlue);
+}
+
+.container .second-section .text{
+    text-align: center; 
+    padding: 0 6rem;
+  
+}
+
+.container .second-section .text h2{
+    color: var(--darkBlue);
+    margin-bottom: 0.5rem;
+}
+
+
+.container .second-section form{
+    margin: 3rem 5rem;
+    font-size: 13px;
+    /* font-weight: 700; */
+}
+
+
+.container .second-section form .names{
+    display: flex;
+    align-items: center;
+}
+
+.container .second-section form .names #first-name,
+.container .second-section form .names #last-name{
+    padding: 0.7rem 3.5rem 0.7rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.container .second-section form .names #first-name::placeholder,
+.container .second-section form .names #last-name::placeholder{
+    color: var(--darkBlue);
+}
+
+.container .second-section form .names .lastname{
+    margin-left: 1rem;
+}
+
+.container .second-section form #email{
+    padding: 0.7rem 19rem 0.7rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.container .second-section form #email::placeholder{
+    color: var(--darkBlue);
+}
+
+.container .second-section form #number{
+    padding: 0.7rem 19rem 0.7rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.container .second-section form #number::placeholder{
+    color: var(--darkBlue);
+}
+
+
+.container .second-section form #product{
+    padding: 0.5rem 26rem 0.5rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.container .second-section form #business{
+    padding: 0.5rem 23rem 0.5rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.container .second-section form #monthly-sales{
+    padding: 0.5rem 26rem 0.5rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.container .second-section form .radio .radiobtn{
+    display: flex;
+    align-items: center;
+}
+
+.container .second-section form .radio .radiobtn span{
+    margin-left: 0.2rem;
+}
+
+.container .second-section form .radio .radiobtn #yes{
+    cursor: pointer;
+}
+
+.container .second-section form .radio .radiobtn #no{
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.container .second-section form .agree #checkbox{
+    cursor: pointer;
+}
+
+.container .second-section form .agree strong{
+    font-weight: 900;
+}
+
+.container .second-section form .agree span{
+    font-weight: 600;
+}
+
+.container .second-section form button{
+    border: none;
+    border-radius: 10px ;
+    background: var(--buttonColor);
+    padding: 1rem 14rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 1024px) {
+    .container{
+        margin-top: 1.5rem;
+        flex-direction: column;
+    }
+
+    .container .first-section .footer .icons #icon-div{
+        margin: 0 5px;
+    }
 }
