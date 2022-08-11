@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://use.fontawesome.com/7f7186e304.js"></script>
+    <title>Frontend Developer Case Study</title>
+</head>
+<body>
+    <div class="container">
+        <section class="first-section">
+            <div class="text">
+                <h2>More Than a POS Terminal</h2>
+                <p>Introducing the one device for all your <br> payment needs and more</p>
+            </div>
+            <div class="img">
+                <img id="image1" src="/image/POS.webp" alt="POS">
+            </div>
+            <div class="footer">
+                <h6 id="footer-header">AVAILABLE PAYMENT METHODS</h6>
+                <div class="icons">
+                    <div id="icon-div">
+                        <i class="fa fa-qrcode" aria-hidden="true"></i>
+                        <h6>QR</h6>
+                    </div>
+                    <div id="icon-div">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <h6>CARDS</h6>
+                    </div>
+                    <div id="icon-div">
+                        <img id="icon" src="" alt="USSD">
+                        <h6>USSD</h6>
+                    </div>
+                    <div id="icon-div">
+                        <img id="icon" src="" alt="TRANSFER">
+                        <h6>TRANSFER</h6>
+                    </div>
+                    <div id="icon-div">
+                        <img id="icon" src="" alt="PAYCODE">
+                        <h6>PAYCODE</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="second-section">
+            <div class="text">
+                <h2>Your Smart POS is just a Few Clicks Away</h2>
+                <p>Let us help you kick start the journey that's beyond collecting <br>
+                    payments, please share your details here.</p>
+            </div>
+            <form>
+               <div class="names">
+                    <div class="firstname">
+                        <label for="first-name">First Name</label> <br>
+                        <input type="text" name="first-name" id="first-name" placeholder="First Name">
+                    </div>
+                        
+                    <div class="lastname">
+                        <label for="first-name">Last Name</label> <br>
+                        <input type="text" name="last-name" id="name" placeholder="Last Name">
+                    </div>
+               </div>
+
+               <div class="email">
+                    <label for="email">Email Address</label> <br>
+                    <input type="email" name="email" id="email" placeholder="Your Email Address">
+               </div>
+
+               <div class="number">
+                    <label for="number">Phone Number</label> <br>
+                    <input type="tel" name="number" id="number" placeholder="Phone Number">
+               </div>
+
+               <div class="product">
+                    <label for="product"> Where Do You Sell? </label> <br>
+                    <select name="product" id="product">
+                        <option value="Lagos">Lagos</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Osun">Osun</option>
+                    </select>
+               </div>
+
+               <div class="business-type">
+                    <label for="business"> Business Type </label> <br>
+                    <select name="business" id="business">
+                        <option value="Trading">Trading</option>
+                        <option value="Lagos">Transportation</option>
+                        <!-- <option value="Lagos">Osun</option> -->
+                    </select>
+               </div>
+
+               <div class="monthly-sales">
+                    <label for="monthly-sales"> Average Monthly Sales/Turnover </label> <br>
+                    <select name="monthly-sales" id="monthly-sales">
+                        <option value="50%">50%</option>
+                        <option value="100%">100%</option>
+                        <!-- <option value="Lagos">Osun</option> -->
+                    </select>
+               </div>
+
+               <div class="radio">
+                    <p>Will you be interested in integrating a Business Management Software?</p>
+                    <input type="radio" name="yes" id="yes"> <label for="yes">Yes</label>
+                    <input type="radio" name="no" id="no"> <label for="no">No</label>
+               </div>
+
+               <div class="agree">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy Policy</span></label>
+               </div>
+
+               <button type="submit" id="submit">Submit</button>
+            </form>
+
+            
+        </section>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
