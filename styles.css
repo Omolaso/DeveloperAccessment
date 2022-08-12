@@ -159,7 +159,7 @@
 
 
 .container .second-section form #product{
-    padding: 0.5rem 26rem 0.5rem 0.5rem;
+    padding: 0.5rem 25.5rem 0.5rem 0.5rem;
     border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
@@ -173,7 +173,7 @@
 }
 
 .container .second-section form #monthly-sales{
-    padding: 0.5rem 26rem 0.5rem 0.5rem;
+    padding: 0.5rem 25.5rem 0.5rem 0.5rem;
     border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
