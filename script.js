@@ -10,11 +10,10 @@ const radioNo = document.getElementById('no');
 const checkbox = document.getElementById('checkbox');
 
 
-
 const submitBtn = document.getElementById('form');
 submitBtn.addEventListener('submit', (e) => {
     e.preventDefault();
-    location.reload()
+    location.reload();
 
     const firstNameValue = firstName.value
     if(firstName.value === ''){
@@ -65,23 +64,31 @@ submitBtn.addEventListener('submit', (e) => {
         localStorage.setItem('Business Type', `${businessValue}`)
     }
 
-    if(radioYes){
-        localStorage.setItem('Interested in business management software?', `${radioYes.value}`)
-    }else{
-        return
-    }
-
-    if(radioNo){
-        localStorage.setItem('Interested in business management software?', `${radioNo.value}`)
-    }else{
-        return
-    }
-
     if(checkbox){
         localStorage.setItem('Agree to our terms?', 'Yes')
     }else{
         return
     }
- 
-});
 
+    const radioButtons = document.querySelectorAll('input[name ="interest"]');
+    for (const radioButton of radioButtons) {
+        if(radioButton.checked){
+            localStorage.setItem('Interested in business management software?', `${radioYes.value}`)
+        }
+    }
+
+    //PREVIOUSLY DONE
+
+    // if(radioYes){
+    //     localStorage.setItem('Interested in business management software?', `${radioYes.value}`)
+    // }else{
+    //     return
+    // }
+
+    // if(radioNo){
+    //     localStorage.setItem('Interested in business management software?', `${radioNo.value}`)
+    // }else{
+    //     return
+    // }
+    
+});
