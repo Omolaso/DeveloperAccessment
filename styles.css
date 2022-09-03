@@ -24,11 +24,11 @@
 .container .first-section{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
     text-align: center;
     min-height: 80vh;
-    flex: 0.7;
+    flex: 1;
     /* border: 1px solid; */
     margin-bottom: 5rem;
 }
@@ -44,7 +44,6 @@
     line-height: 18px;
 }
 
-
 .container .first-section .img #image1{
     width: 250px;
     height: 250px;
@@ -54,10 +53,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    /* border: 1px solid; */
     width: 100%;
-    max-width: 700px;
+    /* border: 1px solid; */
+    /* text-align: center; */
+    /* max-width: 700px; */
 }
 
 .container .first-section .footer #footer-header{
@@ -68,8 +67,9 @@
 
 .container .first-section .footer .icons{
     display: flex;
-    align-items: center;
+    justify-content: center;
     justify-content: space-around;
+    align-items: center;
     width: 50%;
 }
 
@@ -90,17 +90,21 @@
 /* SECONDSECTION */
 
 .container .second-section{
+    display: flex;
+    flex-direction: column;
     padding: 1.5rem 0rem;
     min-height: 100vh;
-    flex: 0.7;
+    
+    flex: 1;
     border: 1px solid #ccc;
     color: var(--darkBlue);
 }
 
 .container .second-section .text{
-    text-align: center; 
+    /* border: 1px solid; */
+    text-align: center;
     padding: 0 6rem;
-  
+    flex: 0.7;
 }
 
 .container .second-section .text h2{
@@ -108,22 +112,31 @@
     margin-bottom: 0.5rem;
 }
 
+.container .second-section .text p{
+    word-spacing: 3px;
+    line-height: 20px;
+}
 
 .container .second-section form{
-    margin: 3rem 5rem;
+    padding: 3rem 5rem ;
     font-size: 13px;
-    /* font-weight: 700; */
+    /* border: 1px solid; */
+    flex:0.5;
 }
 
 
 .container .second-section form .names{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid #ccc; */
 }
 
 .container .second-section form .names #first-name,
 .container .second-section form .names #last-name{
-    padding: 0.7rem 3.5rem 0.7rem 0.5rem;
+    /* padding: 0.7rem 3.5rem 0.7rem 0.5rem; */
+    padding: 0.7rem;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
@@ -138,7 +151,9 @@
 }
 
 .container .second-section form #email{
-    padding: 0.7rem 19rem 0.7rem 0.5rem;
+    /* padding: 0.7rem 19rem 0.7rem 0.5rem; */
+    padding: 0.7rem;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
@@ -148,7 +163,9 @@
 }
 
 .container .second-section form #number{
-    padding: 0.7rem 19rem 0.7rem 0.5rem;
+    /* padding: 0.7rem 19rem 0.7rem 0.5rem; */
+    padding: 0.7rem;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
@@ -159,21 +176,27 @@
 
 
 .container .second-section form #product{
-    padding: 0.5rem 25.5rem 0.5rem 0.5rem;
+    /* padding: 0.5rem 25.5rem 0.5rem 0.5rem; */
+    padding: 0.7rem;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
 }
 
 .container .second-section form #business{
-    padding: 0.5rem 23rem 0.5rem 0.5rem;
+    /* padding: 0.5rem 23rem 0.5rem 0.5rem; */
+    padding: 0.7rem;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
 }
 
 .container .second-section form #monthly-sales{
-    padding: 0.5rem 25.5rem 0.5rem 0.5rem;
+    /* padding: 0.5rem 25.5rem 0.5rem 0.5rem; */
+    padding: 0.7rem;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
     cursor: pointer;
@@ -213,7 +236,8 @@
     border: none;
     border-radius: 10px ;
     background: var(--buttonColor);
-    padding: 1rem 14rem;
+    padding: 1rem 0;
+    width: 100%;
     color: white;
     cursor: pointer;
 }
@@ -225,11 +249,16 @@
 
 @media screen and (max-width: 1024px) {
     .container{
-        margin-top: 1.5rem;
+        margin-top: 5rem;
         flex-direction: column;
     }
 
     .container .first-section .footer .icons #icon-div{
-        margin: 0 5px;
+        margin: 0 10px;
+    }
+
+    .container .second-section{
+        width: 100%;
+        max-width: 700px;
     }
 }
