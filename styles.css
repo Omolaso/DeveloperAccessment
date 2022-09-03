@@ -27,10 +27,10 @@
     /* justify-content: space-around; */
     align-items: center;
     text-align: center;
-    min-height: 80vh;
+    min-height: 100vh;
     flex: 1;
     /* border: 1px solid; */
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
 }
 
 .container .first-section .text h2{
@@ -94,7 +94,6 @@
     flex-direction: column;
     padding: 1.5rem 0rem;
     min-height: 100vh;
-    
     flex: 1;
     border: 1px solid #ccc;
     color: var(--darkBlue);
@@ -135,7 +134,7 @@
 .container .second-section form .names #first-name,
 .container .second-section form .names #last-name{
     /* padding: 0.7rem 3.5rem 0.7rem 0.5rem; */
-    padding: 0.7rem;
+    padding: 0.7rem 5rem 0.7rem 0.7rem ;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -249,7 +248,7 @@
 
 @media screen and (max-width: 1024px) {
     .container{
-        margin-top: 5rem;
+        margin-top: 3rem;
         flex-direction: column;
     }
 
@@ -258,6 +257,7 @@
     }
 
     .container .second-section{
+        margin-top: -5rem;
         width: 100%;
         max-width: 700px;
     }
