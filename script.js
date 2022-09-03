@@ -72,12 +72,12 @@ submitBtn.addEventListener('submit', (e) => {
 
     const radioButtons = document.querySelectorAll('input[name ="interest"]');
     for (const radioButton of radioButtons) {
-        if(radioButton.checked){
-            localStorage.setItem('Interested in business management software?', `${radioYes.value}`)
+        if(radioButton){
+            localStorage.setItem('Interested in business management software?', `${radioButton.value}`)
         }
     }
 
-    //PREVIOUSLY DONE
+    //PREVIOUS ATTEMPT
 
     // if(radioYes){
     //     localStorage.setItem('Interested in business management software?', `${radioYes.value}`)
@@ -90,5 +90,20 @@ submitBtn.addEventListener('submit', (e) => {
     // }else{
     //     return
     // }
-    
+
+    //PREVIOUS ATTEMPT
+
 });
+
+// STILL NOT RIGHT
+      
+// const radioButtons = document.querySelectorAll('input[name="interest"]');
+//     for (const radioButton of radioButtons) {
+//     if (radioButton) {
+//     const selectedSize = radioButton.value;
+//         console.log(selectedSize);
+//         break;
+//     }
+// }
+         
+    
