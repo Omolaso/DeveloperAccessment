@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <!-- <script src="https://use.fontawesome.com/7f7186e304.js"></script> -->
-    <title>Frontend Developer Case Study</title>
+    <title>Application Form</title>
 </head>
 <body>
     <div class="container">
@@ -52,16 +52,28 @@
                 <p>Let us help you kick-start the journey that's beyond collecting 
                     <span>payments, please share your details here.</span></p>
             </div>
+
             <form id="form">
                <div class="names">
                     <div class="firstname">
                         <label for="first-name">First Name</label> <br>
-                        <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
+                        <input 
+                            type="text" 
+                            name="firstName" 
+                            id="first-name" 
+                            placeholder="First Name"
+                        >
+                        <div id="firstName-error"></div>
                     </div>
 
                     <div class="lastname">
                         <label for="first-name">Last Name</label> <br>
-                        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+                        <input 
+                            type="text" 
+                            name="lastName" 
+                            id="last-name" 
+                            placeholder="Last Name"
+                        >
                     </div>
                </div>
 
@@ -69,14 +81,27 @@
 
                <div class="email">
                     <label for="email">Email Address</label> <br>
-                    <input type="email" name="email" id="email" placeholder="Your Email Address" required>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        placeholder="Your Email Address"
+                        pattern="!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)"
+                    >
                </div>
 
                <br>
 
                <div class="number">
                     <label for="number">Phone Number</label> <br>
-                    <input type="tel" name="number" id="number" title="Must be eleven digits" pattern="[0-9]{11}" placeholder="Phone Number" required>
+                    <input 
+                        type="tel" 
+                        name="number" 
+                        id="number" 
+                        title="Must be eleven digits" 
+                        pattern="[0-9]{11}"
+                        placeholder="Phone Number" 
+                    >
                </div>
 
                <br>
@@ -84,8 +109,8 @@
 
                <div class="product">
                     <label for="product"> Where Do You Sell? </label> <br>
-                    <select name="product" id="product" required>
-                        <option value="">-select-</option>
+                    <select name="product" id="product">
+                        <option value="" disabled selected>-select-</option>
                         <option value="Lagos">Lagos</option>
                         <option value="Oyo">Oyo</option>
                         <option value="Osun">Osun</option>
@@ -96,8 +121,8 @@
 
                <div class="business-type">
                     <label for="business"> Business Type </label> <br>
-                    <select name="business" id="business" required>
-                        <option value=""> -select-</option>
+                    <select name="business" id="business">
+                        <option value="" disabled selected> -select-</option>
                         <option value="Trading">Trading</option>
                         <option value="Transportation">Transportation</option>
                     </select>
@@ -107,31 +132,26 @@
 
                <div class="monthly-sales">
                     <label for="monthly-sales"> Average Monthly Sales/Turnover </label> <br>
-                    <select name="monthly-sales" id="monthly-sales" required>
-                        <option value="">-select-</option>
+                    <select name="monthly-sales" id="monthly-sales">
+                        <option value="" disabled selected>-select-</option>
                         <option value="50%">50%</option>
                         <option value="100%">100%</option>
                     </select>
                </div>
 
-               <br>
-
                <div class="radio">
                     <label>Will you be interested in integrating a Business Management Software?</label>
-                    <br>
-                    <br>
+                   
                     <div class="radiobtn">
-                        <input type="radio" title="yes" id="yes" name="interest" value="Yes" required> <label>Yes</label>
-                        <input type="radio" title="no" id="no" name="interest" value="No" required> <label> No</label>
+                        <input type="radio" title="yes" id="yes" name="interest" value="Yes"> <label for="yes">Yes</label>
+                        <input type="radio" title="no" id="no" name="interest" value="No"> <label for="no"> No</label>
                     </div>
                 </div>
                
-               <br>
-               <br>
-               <br>
+              
 
                <div class="agree">
-                    <input type="checkbox" name="checkbox" id="checkbox" required>
+                    <input type="checkbox" name="checkbox" id="checkbox">
                     <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy Policy</span></label>
                </div>
                

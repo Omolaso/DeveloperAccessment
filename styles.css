@@ -125,19 +125,18 @@
 
 
 .container .second-section form .names{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* border: 1px solid #ccc; */
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
 }
 
 .container .second-section form .names #first-name,
 .container .second-section form .names #last-name{
-    /* padding: 0.7rem 3.5rem 0.7rem 0.5rem; */
-    padding: 0.7rem 5rem 0.7rem 0.7rem ;
-    width: 100%;
+    padding: 0.7rem;
     border: 1px solid #ccc;
     border-radius: 3px;
+    width: 100%;
+
 }
 
 .container .second-section form .names #first-name::placeholder,
@@ -146,7 +145,7 @@
 }
 
 .container .second-section form .names .lastname{
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 
 .container .second-section form #email{
@@ -201,22 +200,26 @@
     cursor: pointer;
 }
 
+.container .second-section form .radio{
+    margin-top: 1rem;
+}
+
 .container .second-section form .radio .radiobtn{
     display: flex;
     align-items: center;
+    margin-top: 0.7rem;
 }
 
 .container .second-section form .radio .radiobtn label{
     margin-left: 0.2rem;
 }
 
-.container .second-section form .radio .radiobtn #yes{
-    cursor: pointer;
-}
-
 .container .second-section form .radio .radiobtn #no{
     margin-left: 1rem;
-    cursor: pointer;
+}
+
+.container .second-section form .agree{
+    margin-top: 2rem;
 }
 
 .container .second-section form .agree #checkbox{

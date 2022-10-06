@@ -8,58 +8,61 @@ const monthlySales = document.getElementById('monthly-sales');
 const radioYes = document.getElementById('yes');
 const radioNo = document.getElementById('no');
 const checkbox = document.getElementById('checkbox');
-
+const option = document.getElementById('option');
 
 const submitBtn = document.getElementById('form');
 submitBtn.addEventListener('submit', (e) => {
     e.preventDefault();
-    location.reload();
+    // location.reload();
 
     const firstNameValue = firstName.value
     if(firstName.value === ''){
-        return
+        console.log('add value first name');
     }else{
         localStorage.setItem('First Name', `${firstNameValue}`)
     };
 
     const lastNameValue = lastName.value
     if(lastName.value === ''){
-        return
+        console.log('add valid lastname');
     }else{
         localStorage.setItem('Last Name', `${lastNameValue}`)
     };
 
     const numberValue = number.value
     if(number.value === ''){
-        return
+        console.log('add value number');
     }else{
         localStorage.setItem('Phone Number', `${numberValue}`)
     }
 
     const emailValue = email.value
     if(email.value === ''){
-        return
+        console.log('add valid email');
+
     }else{
         localStorage.setItem('Email Address', `${emailValue}`)
     }
 
     const productValue = product.value
     if(product.value === ''){
-        return
+        console.log('add valid product');
+
     }else{
         localStorage.setItem('Where Do You Sell', `${productValue}`)
     }
 
     const monthlySalesValue = monthlySales.value
     if(monthlySales.value === ''){
-        return
+        console.log('hi');
     }else{
         localStorage.setItem('Average Monthly Sales', `${monthlySalesValue}`)
     }
 
     const businessValue = business.value
     if(business.value === ''){
-       return
+        console.log('add valid business');
+
     }else{
         localStorage.setItem('Business Type', `${businessValue}`)
     }
@@ -67,7 +70,8 @@ submitBtn.addEventListener('submit', (e) => {
     if(checkbox){
         localStorage.setItem('Agree to our terms?', 'Yes')
     }else{
-        return
+        console.log('check the box');
+
     }
 
     const radioButtons = document.querySelectorAll('input[name ="interest"]');
@@ -76,6 +80,8 @@ submitBtn.addEventListener('submit', (e) => {
             localStorage.setItem('Interested in business management software?', `${radioButton.value}`)
         }
     }
+});
+
 
     //PREVIOUS ATTEMPT
 
@@ -93,7 +99,6 @@ submitBtn.addEventListener('submit', (e) => {
 
     //PREVIOUS ATTEMPT
 
-});
 
 // STILL NOT RIGHT
       
