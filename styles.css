@@ -24,13 +24,11 @@
 .container .first-section{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     align-items: center;
     text-align: center;
     min-height: 100vh;
     flex: 1;
     /* border: 1px solid; */
-    /* margin-bottom: 5rem; */
 }
 
 .container .first-section .text h2{
@@ -130,51 +128,49 @@
     column-gap: 10px;
 }
 
-.container .second-section form .names #first-name,
-.container .second-section form .names #last-name{
+.container .second-section form .names .formInput input,
+.container .second-section form .names .formInput input{
     padding: 0.7rem;
     border: 1px solid #ccc;
     border-radius: 3px;
     width: 100%;
-
 }
 
-.container .second-section form .names #first-name::placeholder,
-.container .second-section form .names #last-name::placeholder{
+
+
+.container .second-section form .names .formInput input::placeholder,
+.container .second-section form .names .formInput input::placeholder{
     color: var(--darkBlue);
 }
 
-.container .second-section form .names .lastname{
-    /* margin-left: 1rem; */
-}
-
-.container .second-section form #email{
-    /* padding: 0.7rem 19rem 0.7rem 0.5rem; */
+.container .second-section form .formInput input{
     padding: 0.7rem;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
-.container .second-section form #email::placeholder{
+.container .second-section form .formInput input::placeholder{
     color: var(--darkBlue);
 }
 
-.container .second-section form #number{
-    /* padding: 0.7rem 19rem 0.7rem 0.5rem; */
+.container .second-section form .formInput select{
+    color: var(--darkBlue);
+}
+
+/* .container .second-section form input{
     padding: 0.7rem;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 3px;
-}
+} */
 
-.container .second-section form #number::placeholder{
+/* .container .second-section form input::placeholder{
     color: var(--darkBlue);
-}
+} */
 
 
 .container .second-section form #product{
-    /* padding: 0.5rem 25.5rem 0.5rem 0.5rem; */
     padding: 0.7rem;
     width: 100%;
     border: 1px solid #ccc;
@@ -245,8 +241,6 @@
 }
 
 
-
-
 /* MEDIA QUERY */
 
 @media screen and (max-width: 1024px) {
@@ -264,4 +258,44 @@
         width: 100%;
         max-width: 700px;
     }
+}
+
+
+/* NEW FOR FORM VALIDATION */
+.formInput{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.formInput i{
+    position: absolute;
+    top: 27px;
+    right: 5px;
+    visibility: hidden;
+}
+
+.formInput small{
+    visibility: hidden;
+}
+
+.formInput.error input{
+    border: 2px solid #e74c3c !important;
+}
+
+.formInput.error i.fa-circle-exclamation{
+    visibility: visible;
+    color: #e74c3c;
+    font-size: 15px;
+}
+
+
+.formInput.success input{
+    border: 2px solid #2ecc71 !important;
+}
+
+.formInput.success i.fa-circle-check{
+    visibility: visible;
+    color: #2ecc71;
+    font-size: 15px;
 }

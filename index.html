@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <!-- <script src="https://use.fontawesome.com/7f7186e304.js"></script> -->
+    <script src="https://kit.fontawesome.com/be3b38df61.js" crossorigin="anonymous"></script>
     <title>Application Form</title>
 </head>
 <body>
@@ -54,32 +54,40 @@
             </div>
 
             <form id="form">
+
                <div class="names">
-                    <div class="firstname">
+
+                    <div class="formInput success">
                         <label for="first-name">First Name</label> <br>
                         <input 
                             type="text" 
                             name="firstName" 
                             id="first-name" 
                             placeholder="First Name"
+                            class="error"
                         >
-                        <div id="firstName-error"></div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <small>Error Message</small>
                     </div>
 
-                    <div class="lastname">
+                    <div class="formInput error">
                         <label for="first-name">Last Name</label> <br>
                         <input 
                             type="text" 
                             name="lastName" 
                             id="last-name" 
                             placeholder="Last Name"
+                            class="success"
                         >
+                        <i class="fa-solid fa-circle-check"></i>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <small>Error Message</small>
                     </div>
                </div>
 
-               <br>
-
-               <div class="email">
+      
+               <div class="formInput">
                     <label for="email">Email Address</label> <br>
                     <input 
                         type="email" 
@@ -88,11 +96,14 @@
                         placeholder="Your Email Address"
                         pattern="!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)"
                     >
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Message</small>
                </div>
 
-               <br>
+        
 
-               <div class="number">
+               <div class="formInput">
                     <label for="number">Phone Number</label> <br>
                     <input 
                         type="tel" 
@@ -102,12 +113,15 @@
                         pattern="[0-9]{11}"
                         placeholder="Phone Number" 
                     >
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <small>Error Message</small>
                </div>
 
-               <br>
+        
 
 
-               <div class="product">
+               <div class="formInput">
                     <label for="product"> Where Do You Sell? </label> <br>
                     <select name="product" id="product">
                         <option value="" disabled selected>-select-</option>
@@ -117,9 +131,9 @@
                     </select>
                </div>
 
-               <br>
+        
 
-               <div class="business-type">
+               <div class="formInput">
                     <label for="business"> Business Type </label> <br>
                     <select name="business" id="business">
                         <option value="" disabled selected> -select-</option>
@@ -128,9 +142,9 @@
                     </select>
                </div>
 
-               <br>
+             
 
-               <div class="monthly-sales">
+               <div class="formInput">
                     <label for="monthly-sales"> Average Monthly Sales/Turnover </label> <br>
                     <select name="monthly-sales" id="monthly-sales">
                         <option value="" disabled selected>-select-</option>
@@ -155,7 +169,7 @@
                     <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy Policy</span></label>
                </div>
                
-               <br>
+             
                <br>
 
                <button type="submit" id="submit">Submit</button>
