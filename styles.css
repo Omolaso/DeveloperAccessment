@@ -262,6 +262,8 @@
 
 
 /* NEW FOR FORM VALIDATION */
+
+/* GENERAL */
 .formInput{
     margin-bottom: 10px;
     padding-bottom: 5px;
@@ -279,6 +281,16 @@
     visibility: hidden;
 }
 
+.radio small{
+    visibility: hidden;
+}
+
+.agree small{
+    visibility: hidden;
+}
+
+/* FOR ERRORS */
+
 .formInput.error input{
     border: 2px solid #e74c3c !important;
 }
@@ -289,7 +301,14 @@
     font-size: 15px;
 }
 
+.formInput.error small,
+.radio.error small,
+.agree.error small{
+    visibility: visible;
+    color: #e74c3c;
+}
 
+/* FOR SUCCESS */
 .formInput.success input{
     border: 2px solid #2ecc71 !important;
 }

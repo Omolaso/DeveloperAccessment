@@ -8,107 +8,130 @@ const monthlySales = document.getElementById('monthly-sales');
 const radioYes = document.getElementById('yes');
 const radioNo = document.getElementById('no');
 const checkbox = document.getElementById('checkbox');
-const option = document.getElementById('option');
+// const formBtn = document.getElementById('submit');
+
+
 
 const submitBtn = document.getElementById('form');
 submitBtn.addEventListener('submit', (e) => {
     e.preventDefault();
-    // location.reload();
 
-    const firstNameValue = firstName.value
-    if(firstName.value === ''){
-        console.log('add value first name');
-    }else{
-        localStorage.setItem('First Name', `${firstNameValue}`)
-    };
-
-    const lastNameValue = lastName.value
-    if(lastName.value === ''){
-        console.log('add valid lastname');
-    }else{
+    if(setErrorFor){
+        console.log('hi');
+     }else{
+        localStorage.setItem('First Name', `${firstNameValue}`);
         localStorage.setItem('Last Name', `${lastNameValue}`)
+     }
+
+    const firstNameValue = firstName.value.trim();
+    if(firstNameValue === ''){
+        setErrorFor(firstName, 'First name cannot be blank')
+    }else if (firstNameValue.length <= 2) {
+        setErrorFor(firstName, 'Must be above 3 letters')
+    }
+    else{
+        setSuccessFor(firstName)
     };
 
-    const numberValue = number.value
+    const lastNameValue = lastName.value.trim();
+    if(lastName.value === ''){
+        setErrorFor(lastName, 'Last name cannot be blank');
+    }else if (lastNameValue.length <= 2) {
+        setErrorFor(lastName, 'Must be above 3 letters')
+    }
+    else{
+        setSuccessFor(lastName)
+    };
+
+    const numberValue = number.value.trim();
     if(number.value === ''){
-        console.log('add value number');
-    }else{
+        setErrorFor(number, 'Include a phone number');
+    }else if(numberValue.length <= 10 || numberValue.length > 15 ){
+        setErrorFor(number, 'Invalid Phone Number')
+    }
+    else{
+        setSuccessFor(number);
         localStorage.setItem('Phone Number', `${numberValue}`)
     }
 
-    const emailValue = email.value
+    const emailValue = email.value.trim();
     if(email.value === ''){
-        console.log('add valid email');
-
-    }else{
+        setErrorFor(email, 'Email cannot be blank')
+    }else if(!isEmail(emailValue)){
+        setErrorFor(email, 'Invalid Email')
+    }
+    else{
+        setSuccessFor(email);
         localStorage.setItem('Email Address', `${emailValue}`)
     }
 
-    const productValue = product.value
+    const productValue = product.value.trim();
     if(product.value === ''){
-        console.log('add valid product');
-
+        setErrorFor(product, 'Please select a location')
     }else{
+        setSuccessFor(product);
         localStorage.setItem('Where Do You Sell', `${productValue}`)
     }
 
-    const monthlySalesValue = monthlySales.value
+    const monthlySalesValue = monthlySales.value.trim();
     if(monthlySales.value === ''){
-        console.log('hi');
+        setErrorFor(monthlySales, 'Please specify your monthly sales')
     }else{
+        setSuccessFor(monthlySales)
         localStorage.setItem('Average Monthly Sales', `${monthlySalesValue}`)
     }
 
-    const businessValue = business.value
+    const businessValue = business.value.trim();
     if(business.value === ''){
-        console.log('add valid business');
-
+        setErrorFor(business, 'Please specify your business type')
     }else{
+        setSuccessFor(business)
         localStorage.setItem('Business Type', `${businessValue}`)
     }
 
-    if(checkbox){
-        localStorage.setItem('Agree to our terms?', 'Yes')
-    }else{
-        console.log('check the box');
+  
 
-    }
 
-    const radioButtons = document.querySelectorAll('input[name ="interest"]');
-    for (const radioButton of radioButtons) {
-        if(radioButton){
-            localStorage.setItem('Interested in business management software?', `${radioButton.value}`)
-        }
-    }
+    // if(checkbox){
+    //     console.log('check the box');
+    // }else{
+    //     localStorage.setItem('Agree to our terms?', 'Yes')
+    // }
+
+    // const radioButtons = document.querySelectorAll('input[name ="interest"]');
+    // for (const radioButton of radioButtons) {
+    //     if(radioButton){
+    //         localStorage.setItem('Interested in business management software?', `${radioButton.value}`)
+    //     }
+    // }
 });
 
 
-    //PREVIOUS ATTEMPT
 
-    // if(radioYes){
-    //     localStorage.setItem('Interested in business management software?', `${radioYes.value}`)
-    // }else{
-    //     return
-    // }
+// FUNCTIONS
 
-    // if(radioNo){
-    //     localStorage.setItem('Interested in business management software?', `${radioNo.value}`)
-    // }else{
-    //     return
-    // }
+function setErrorFor(variable, message){
+    //note: the variable parameter is for EACH inputs that is why it can be changed when called.
 
-    //PREVIOUS ATTEMPT
+    const formInput = variable.parentElement;
+    const small = formInput.querySelector('small');
+    small.innerText = message
+    //error class
+    formInput.classList = 'formInput error';
+}
 
+function setSuccessFor(variable){
+    const formInput = variable.parentElement;
+    formInput.classList = 'formInput success';
+}
 
-// STILL NOT RIGHT
-      
-// const radioButtons = document.querySelectorAll('input[name="interest"]');
-//     for (const radioButton of radioButtons) {
-//     if (radioButton) {
-//     const selectedSize = radioButton.value;
-//         console.log(selectedSize);
-//         break;
-//     }
+// email validation
+function isEmail(email){
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+//phone validation
+// function isPhone(number) {
+//     return /(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})/
 // }
-         
     
