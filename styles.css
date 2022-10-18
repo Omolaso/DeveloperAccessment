@@ -216,6 +216,8 @@
 
 .container .second-section form .agree{
     margin-top: 2rem;
+    padding: 1.5rem 0;
+    width: 100%;
 }
 
 .container .second-section form .agree #checkbox{
@@ -287,6 +289,7 @@
 
 .agree small{
     visibility: hidden;
+    /* border: 1px solid; */
 }
 
 /* FOR ERRORS */

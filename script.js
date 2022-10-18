@@ -8,7 +8,11 @@ const monthlySales = document.getElementById('monthly-sales');
 const radioYes = document.getElementById('yes');
 const radioNo = document.getElementById('no');
 const checkbox = document.getElementById('checkbox');
-// const formBtn = document.getElementById('submit');
+
+
+
+//validate radio and checkbox
+//ensure all inputs are successful before storing to local storage
 
 
 
@@ -16,11 +20,12 @@ const submitBtn = document.getElementById('form');
 submitBtn.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if(setErrorFor){
+    if(setSuccessFor === true){
         console.log('hi');
      }else{
-        localStorage.setItem('First Name', `${firstNameValue}`);
-        localStorage.setItem('Last Name', `${lastNameValue}`)
+        // localStorage.setItem('First Name', `${firstNameValue}`);
+        // localStorage.setItem('Last Name', `${lastNameValue}`)
+        console.log('hey');
      }
 
     const firstNameValue = firstName.value.trim();
@@ -89,13 +94,15 @@ submitBtn.addEventListener('submit', (e) => {
         localStorage.setItem('Business Type', `${businessValue}`)
     }
 
-  
+//   console.log(checkbox.checked)
 
-
-    // if(checkbox){
-    //     console.log('check the box');
-    // }else{
-    //     localStorage.setItem('Agree to our terms?', 'Yes')
+    if(checkbox.checked === true){
+        localStorage.setItem('Agree to our terms?', 'Yes')
+        // setErrorFor(checkbox, '')
+        // console.log('true');
+    }
+    // else{
+    //    setErrorFor(checkbox, 'Please check the box')
     // }
 
     // const radioButtons = document.querySelectorAll('input[name ="interest"]');
