@@ -49,13 +49,14 @@
         <section class="second-section">
             <div class="text">
                 <h2>Your Smart POS is just a Few Clicks Away</h2>
-                <p>Let us help you kick-start the journey that's beyond collecting 
-                    <span>payments, please share your details here.</span></p>
+                <p>Let us help you kick-start the journey that's beyond collecting payments,
+                    please share your details here.
+                </p>
             </div>
 
             <form id="form">
 
-               <div class="names">
+               <section class="names">
 
                     <div class="formInput">
                         <label for="first-name">First Name</label> <br>
@@ -65,6 +66,8 @@
                             id="first-name" 
                             placeholder="First Name"
                             class="error"
+                            onblur="firstNameValueCheck()"
+                            onkeyup="firstNameValueCheck()"
                         >
                         <i class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
@@ -72,19 +75,20 @@
                     </div>
 
                     <div class="formInput">
-                        <label for="first-name">Last Name</label> <br>
+                        <label for="last-name">Last Name</label> <br>
                         <input 
                             type="text" 
                             name="lastName" 
                             id="last-name" 
                             placeholder="Last Name"
-                            class="success"
+                            onblur="lastNameValueCheck()"
+                            onkeyup="lastNameValueCheck()"
                         >
                         <i class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <small></small>
                     </div>
-               </div>
+               </section>
 
       
                <div class="formInput">
@@ -92,8 +96,10 @@
                     <input 
                         type="email" 
                         name="email" 
-                        id="email" 
+                        id="email"
                         placeholder="Your Email Address"
+                        onblur="emailChangedValue()"
+                        onkeyup="emailChangedValue()"
                     >
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
@@ -108,7 +114,10 @@
                         type="tel" 
                         name="number" 
                         id="number" 
-                        placeholder="Phone Number" 
+                        placeholder="Phone Number"
+                        onblur="numberChangedValue()"
+                        onkeyup="numberChangedValue()"
+                        title="Format: xxxx-xxx-xxxx"
                     >
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
@@ -165,7 +174,7 @@
               
 
                <div class="agree">
-                        <input type="checkbox" name="checkbox" id="checkbox" required>
+                        <input type="checkbox" name="checkbox" id="checkbox">
                         <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy Policy</span></label>
                     <!-- <div id="small">
                         <small></small>

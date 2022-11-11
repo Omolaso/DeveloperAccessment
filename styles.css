@@ -9,13 +9,12 @@
     padding: 0;
     margin: 0;
     font-family: Arial;
+    /* overflow-x: hidden; */
 }
 
 .container{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
     min-height: 100vh;
 }
 
@@ -26,9 +25,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
     flex: 1;
-    /* border: 1px solid; */
+    padding: 5rem 0;
+    /* background: #00425F; */
+    border: 1px solid;
 }
 
 .container .first-section .text h2{
@@ -99,8 +99,11 @@
 
 .container .second-section .text{
     /* border: 1px solid; */
-    text-align: center;
-    padding: 0 6rem;
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    /* text-align: center; */
+    /* padding: 0 6rem; */
     flex: 0.7;
 }
 
@@ -110,8 +113,9 @@
 }
 
 .container .second-section .text p{
-    word-spacing: 3px;
-    line-height: 20px;
+    /* word-spacing: 3px;
+    line-height: 20px; */
+   /* text-align: center; */
 }
 
 .container .second-section form{
@@ -121,6 +125,9 @@
     flex:0.5;
 }
 
+input:focus{
+    outline: none;
+}
 
 .container .second-section form .names{
     display: grid;
@@ -135,8 +142,6 @@
     border-radius: 3px;
     width: 100%;
 }
-
-
 
 .container .second-section form .names .formInput input::placeholder,
 .container .second-section form .names .formInput input::placeholder{
@@ -157,17 +162,6 @@
 .container .second-section form .formInput select{
     color: var(--darkBlue);
 }
-
-/* .container .second-section form input{
-    padding: 0.7rem;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-} */
-
-/* .container .second-section form input::placeholder{
-    color: var(--darkBlue);
-} */
 
 
 .container .second-section form #product{
@@ -245,9 +239,9 @@
 
 /* MEDIA QUERY */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .container{
-        margin-top: 3rem;
+        /* margin-top: 3rem; */
         flex-direction: column;
     }
 
@@ -256,9 +250,14 @@
     }
 
     .container .second-section{
-        margin-top: -5rem;
+        /* margin-top: -5rem; */
         width: 100%;
-        max-width: 700px;
+        max-width: 800px;
+    }
+
+    .container .second-section form .names{
+        display: grid;
+        grid-template-columns: auto;
     }
 }
 
@@ -279,21 +278,8 @@
     visibility: hidden;
 }
 
-.formInput small{
-    visibility: hidden;
-}
 
-.radio small{
-    visibility: hidden;
-}
-
-.agree small{
-    visibility: hidden;
-    /* border: 1px solid; */
-}
-
-/* FOR ERRORS */
-
+/* ERROR CLASS */
 .formInput.error input{
     border: 2px solid #e74c3c !important;
 }
@@ -304,14 +290,8 @@
     font-size: 15px;
 }
 
-.formInput.error small,
-.radio.error small,
-.agree.error small{
-    visibility: visible;
-    color: #e74c3c;
-}
 
-/* FOR SUCCESS */
+/* SUCCESS CLASS */
 .formInput.success input{
     border: 2px solid #2ecc71 !important;
 }
