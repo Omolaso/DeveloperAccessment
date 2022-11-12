@@ -9,7 +9,6 @@
     padding: 0;
     margin: 0;
     font-family: Arial;
-    /* overflow-x: hidden; */
 }
 
 .container{
@@ -26,9 +25,9 @@
     align-items: center;
     text-align: center;
     flex: 1;
-    padding: 5rem 0;
+    padding: 3rem 0;
     /* background: #00425F; */
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .container .first-section .text h2{
@@ -100,11 +99,12 @@
 .container .second-section .text{
     /* border: 1px solid; */
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     place-items: center;
-    /* text-align: center; */
-    /* padding: 0 6rem; */
-    flex: 0.7;
+    text-align: center;
+    padding: 0 3rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .container .second-section .text h2{
@@ -113,19 +113,21 @@
 }
 
 .container .second-section .text p{
-    /* word-spacing: 3px;
-    line-height: 20px; */
+    word-spacing: 3px;
+    line-height: 20px;
    /* text-align: center; */
+   /* max-width: 550px; */
 }
 
 .container .second-section form{
-    padding: 3rem 5rem ;
+    padding: 3rem  ;
     font-size: 13px;
     /* border: 1px solid; */
     flex:0.5;
 }
 
-input:focus{
+input,
+select:focus{
     outline: none;
 }
 
@@ -144,7 +146,8 @@ input:focus{
 }
 
 .container .second-section form .names .formInput input::placeholder,
-.container .second-section form .names .formInput input::placeholder{
+.container .second-section form .names .formInput input::placeholder,
+.container .second-section form .formInput input::placeholder{
     color: var(--darkBlue);
 }
 
@@ -155,34 +158,14 @@ input:focus{
     border-radius: 3px;
 }
 
-.container .second-section form .formInput input::placeholder{
-    color: var(--darkBlue);
-}
-
 .container .second-section form .formInput select{
     color: var(--darkBlue);
 }
 
 
-.container .second-section form #product{
-    padding: 0.7rem;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.container .second-section form #business{
-    /* padding: 0.5rem 23rem 0.5rem 0.5rem; */
-    padding: 0.7rem;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
+.container .second-section form #businessLocation,
+.container .second-section form #businessType,
 .container .second-section form #monthly-sales{
-    /* padding: 0.5rem 25.5rem 0.5rem 0.5rem; */
     padding: 0.7rem;
     width: 100%;
     border: 1px solid #ccc;
@@ -192,25 +175,23 @@ input:focus{
 
 .container .second-section form .radio{
     margin-top: 1rem;
+    /* border: 1px solid; */
 }
 
-.container .second-section form .radio .radiobtn{
-    display: flex;
-    align-items: center;
-    margin-top: 0.7rem;
+.container .second-section form .radio input[type ='radio']{
+    margin-top: 1rem;
 }
 
-.container .second-section form .radio .radiobtn label{
+.container .second-section form .radio label{
     margin-left: 0.2rem;
 }
 
-.container .second-section form .radio .radiobtn #no{
+.container .second-section form .radio #no{
     margin-left: 1rem;
 }
 
 .container .second-section form .agree{
-    margin-top: 2rem;
-    padding: 1.5rem 0;
+    margin: 1.5rem 0;
     width: 100%;
 }
 
@@ -241,7 +222,6 @@ input:focus{
 
 @media screen and (max-width: 768px) {
     .container{
-        /* margin-top: 3rem; */
         flex-direction: column;
     }
 
@@ -250,7 +230,6 @@ input:focus{
     }
 
     .container .second-section{
-        /* margin-top: -5rem; */
         width: 100%;
         max-width: 800px;
     }
@@ -275,7 +254,7 @@ input:focus{
     position: absolute;
     top: 27px;
     right: 5px;
-    visibility: hidden;
+    display: none;
 }
 
 
@@ -285,7 +264,7 @@ input:focus{
 }
 
 .formInput.error i.fa-circle-exclamation{
-    visibility: visible;
+    display: block;
     color: #e74c3c;
     font-size: 15px;
 }
@@ -297,7 +276,7 @@ input:focus{
 }
 
 .formInput.success i.fa-circle-check{
-    visibility: visible;
+    display: block;
     color: #2ecc71;
     font-size: 15px;
 }
