@@ -217,6 +217,10 @@ select:focus{
     cursor: pointer;
 }
 
+.container .second-section form button:active{
+    opacity: 0.8;
+}
+
 
 /* MEDIA QUERY */
 

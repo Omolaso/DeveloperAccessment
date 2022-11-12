@@ -29,6 +29,7 @@ form.addEventListener('submit', (e) => {
     }
     else{
         setErrorFor(firstName, '');
+        // firstName.parentElement.classList.remove('success')
     };
 
     //lastname
@@ -87,10 +88,10 @@ form.addEventListener('submit', (e) => {
     };
 
     //radio-buttons
-    validateRadioButtonsOnchange();
+    // validateRadioButtonsOnchange();
 
     //checkbox
-    validateCheckboxOnchange();
+    // validateCheckboxOnchange();
 
 
     finalSubmit();
@@ -104,14 +105,14 @@ function setErrorFor(input, message){
     const small = formInput.querySelector('small');
     small.innerText = message;
     small.style.color = '#e74c3c';
+};
 
-    if(!small.innerText){
-        formInput.classList = 'formInput success';
-        // formInput.classList.add('success')
-        // formInput.classList.add('formInput')
-    }else{
-        formInput.classList = 'formInput error';
-    }
+function setSuccessFor(input){
+    input.parentElement.classList.add('success');
+};
+
+function removeSuccessFor(input){
+    input.parentElement.classList.remove('success');
 };
 
 // email regex
@@ -147,20 +148,6 @@ function validateRadioButtons(){
     };
 };
 
-//checkbox
-function validateCheckbox(){
-    const checkboxDivSmall = checkboxDiv.querySelector('small');
-    if (checkbox.checked) {
-        localStorage.setItem('Do you agree to quickteller business privacy policy?', 'Yes')
-        checkboxDivSmall.innerHTML = '';
-        submitBtn.disabled = false;
-    }
-    else{
-        checkboxDivSmall.innerHTML = 'Please check the box';
-        checkboxDivSmall.style.color = '#e74c3c';
-        submitBtn.disabled = true;
-    }
-};
 
 //ONKEYUP, ONBLUR  && ONCHANGE EVENTS
 //firstname
@@ -170,6 +157,7 @@ function firstNameValueCheck(){
     }
     else{
         setErrorFor(firstName, '');
+        setSuccessFor(firstName);
     }
 };
 
@@ -180,6 +168,7 @@ function lastNameValueCheck(){
     }
     else{
         setErrorFor(lastName, '');
+        setSuccessFor(lastName);
     }
 };
 
@@ -196,6 +185,7 @@ function emailChangedValue(){
     }
     else{
         setErrorFor(email, '');
+        setSuccessFor(email);
         submitBtn.disabled = false;
     }
 };
@@ -213,6 +203,7 @@ function numberChangedValue(){
     }
     else{
         setErrorFor(number, '');
+        setSuccessFor(number);
         submitBtn.disabled = false;
     }
 };
@@ -251,16 +242,18 @@ function validateRadioButtonsOnchange(){
     for(let i = 0; i < radioBtns.length; i++){
         if(radioBtns[0].checked){
             radioDivSmall.innerHTML = '';
-            submitBtn.disabled = false;
+            // submitBtn.disabled = false;
         }
         else if(radioBtns[1].checked){
             radioDivSmall.innerHTML = '';
-            submitBtn.disabled = false;
+            // submitBtn.disabled = false;
         }
-        else{
+        else if(!radioBtns[i].checked){
             radioDivSmall.innerHTML = 'Please check one of these';
             radioDivSmall.style.color = '#e74c3c';
-            submitBtn.disabled = true;
+            return false
+            // console.log('hi');
+            // submitBtn.disabled = true;
         }
     };
 };
@@ -279,10 +272,15 @@ function validateCheckboxOnchange(){
     }
 };
 
+
 //FINAL SUBMISSION FUNCTIONS
-function clearFormInputs(){
+function clearForm(){
+    removeSuccessFor(firstName);
+    removeSuccessFor(lastName);
+    removeSuccessFor(email);
+    removeSuccessFor(number);
     form.reset();
-}
+};
 
 function storeInputValues(){
     alert('Your details are now stored in the local storage');
@@ -293,6 +291,7 @@ function storeInputValues(){
     localStorage.setItem('Where Do You Sell?', `${businessLocation.value}`);
     localStorage.setItem('Business Type', `${businessType.value}`);
     localStorage.setItem('Average Monthly Sales', `${monthlySales.value}`);
+    localStorage.setItem('Do you agree to quickteller business privacy policy?', 'Yes')
 };
 
 
@@ -305,9 +304,7 @@ function finalSubmit(){
     }
     else{
         storeInputValues();
-        validateRadioButtons();
-        validateCheckbox();
-        clearFormInputs();
+        // validateRadioButtons();
+        clearForm();
     }
-
 };
