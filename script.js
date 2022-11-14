@@ -9,6 +9,8 @@ const monthlySales = document.getElementById('monthly-sales');
 // radio-buttons
 const radioBtns = document.getElementsByName('interest');
 const radioDiv = document.querySelector('.radio');
+const radioYes = document.getElementById('yes');
+const radioNo = document.getElementById('no');
 
 // check-box
 const checkbox = document.getElementById('checkbox');
@@ -29,7 +31,6 @@ form.addEventListener('submit', (e) => {
     }
     else{
         setErrorFor(firstName, '');
-        // firstName.parentElement.classList.remove('success')
     };
 
     //lastname
@@ -88,10 +89,29 @@ form.addEventListener('submit', (e) => {
     };
 
     //radio-buttons
-    // validateRadioButtonsOnchange();
+    const radioDivSmall = radioDiv.querySelector('small');
+    for(let i = 0; i < radioBtns.length; i++){
+        if(radioBtns[0].checked){
+            radioDivSmall.innerHTML = '';
+        }
+        else if(radioBtns[1].checked){
+            radioDivSmall.innerHTML = '';
+        }
+        else {
+            radioDivSmall.innerHTML = 'Please check one of these';
+            radioDivSmall.style.color = '#e74c3c';
+        }
+    };
 
     //checkbox
-    // validateCheckboxOnchange();
+    const checkboxDivSmall = checkboxDiv.querySelector('small');
+    if (checkbox.checked) {
+        checkboxDivSmall.innerHTML = '';
+    }
+    else{
+        checkboxDivSmall.innerHTML = 'Please check the box';
+        checkboxDivSmall.style.color = '#e74c3c';
+    };
 
 
     finalSubmit();
@@ -124,28 +144,6 @@ function validEmail(email){
 function validPhoneNumber(number) {
     // return /(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})/.test(number);
     return /[0-9]{4}-[0-9]{3}-[0-9]{4}/.test(number);
-};
-
-//radio-buttons
-function validateRadioButtons(){
-    const radioDivSmall = radioDiv.querySelector('small');
-    for(let i = 0; i < radioBtns.length; i++){
-        if(radioBtns[0].checked){
-            localStorage.setItem('Will you be interested in integrating a Business Management Software?', radioBtns[0].value);
-            radioDivSmall.innerHTML = '';
-            submitBtn.disabled = false;
-        }
-        else if(radioBtns[1].checked){
-            localStorage.setItem('Will you be interested in integrating a Business Management Software?', radioBtns[1].value);
-            radioDivSmall.innerHTML = '';
-            submitBtn.disabled = false;
-        }
-        else{
-            radioDivSmall.innerHTML = 'Please check one of these';
-            radioDivSmall.style.color = '#e74c3c';
-            submitBtn.disabled = true;
-        }
-    };
 };
 
 
@@ -242,33 +240,27 @@ function validateRadioButtonsOnchange(){
     for(let i = 0; i < radioBtns.length; i++){
         if(radioBtns[0].checked){
             radioDivSmall.innerHTML = '';
-            // submitBtn.disabled = false;
         }
         else if(radioBtns[1].checked){
             radioDivSmall.innerHTML = '';
-            // submitBtn.disabled = false;
         }
-        else if(!radioBtns[i].checked){
+        else {
             radioDivSmall.innerHTML = 'Please check one of these';
             radioDivSmall.style.color = '#e74c3c';
-            return false
-            // console.log('hi');
-            // submitBtn.disabled = true;
         }
     };
 };
+
 
 //checkbox
 function validateCheckboxOnchange(){
     const checkboxDivSmall = checkboxDiv.querySelector('small');
     if (checkbox.checked) {
         checkboxDivSmall.innerHTML = '';
-        submitBtn.disabled = false;
     }
     else{
         checkboxDivSmall.innerHTML = 'Please check the box';
         checkboxDivSmall.style.color = '#e74c3c';
-        submitBtn.disabled = true;
     }
 };
 
@@ -291,7 +283,15 @@ function storeInputValues(){
     localStorage.setItem('Where Do You Sell?', `${businessLocation.value}`);
     localStorage.setItem('Business Type', `${businessType.value}`);
     localStorage.setItem('Average Monthly Sales', `${monthlySales.value}`);
-    localStorage.setItem('Do you agree to quickteller business privacy policy?', 'Yes')
+
+    if(radioYes.checked){
+        localStorage.setItem('Will you be interested in integrating a Business Management Software?', radioYes.value);
+    }
+    else{
+        localStorage.setItem('Will you be interested in integrating a Business Management Software?', radioNo.value);
+    };
+
+    localStorage.setItem('Do you agree to quickteller business privacy policy?', 'Yes');
 };
 
 
@@ -299,12 +299,20 @@ function finalSubmit(){
     
     if(!firstName.value || !lastName.value || !email.value || !number.value
         || !businessLocation.value || !businessType.value || !monthlySales.value)
-    {
+        {
+            console.log('input');
         return;
+    }
+    else if(!radioYes.checked || !radioNo.checked){
+        console.log('radio');
+        return
+    }
+    else if(!checkbox.checked){
+        console.log('checkbox');
+        return
     }
     else{
         storeInputValues();
-        // validateRadioButtons();
         clearForm();
     }
 };
