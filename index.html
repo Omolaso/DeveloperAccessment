@@ -10,195 +10,198 @@
 </head>
 <body>
     <div class="container">
-        <section class="first-section">
-            <div class="text">
-                <h2>More Than a POS Terminal</h2>
-                <p>Introducing the one device for all your <br> payment needs and more</p>
-            </div>
-            <div class="img">
-                <img id="image1" src="/image/POS.webp" alt="POS">
-            </div>
-            <div class="footer">
-                <h6 id="footer-header">AVAILABLE PAYMENT METHODS</h6>
-                <div class="icons">
-                    <div id="icon-div">
-                        <img id="icon" src="/image/QR.jpg" alt="QR">
-                        <h6>QR</h6>
-                    </div>
-                    <div id="icon-div">
-                        <img id="icon" src="/image/ussd.png" alt="CARDS">
-                        <h6>CARDS</h6>
-                    </div>
-                    <div id="icon-div">
-                        <img id="icon" src="/image/ussd.png" alt="USSD">
-                        <h6>USSD</h6>
-                    </div>
-                    <div id="icon-div">
-                        <img id="icon" src="/image/Transfer.jpg" alt="TRANSFER">
-                        <h6>TRANSFER</h6>
-                    </div>
-                    <div id="icon-div">
-                        <img id="icon" src="/image/paycode.jpg" alt="PAYCODE">
-                        <h6>PAYCODE</h6>
+        <div class="first-section-div">
+            <section class="first-section">
+                <div class="text">
+                    <h2>More Than a POS Terminal</h2>
+                    <p>Introducing the one device for all your <br> payment needs and more</p>
+                </div>
+                <div class="img">
+                    <img id="image1" src="/image/POS.webp" alt="POS">
+                </div>
+                <div class="footer">
+                    <h6 id="footer-header">AVAILABLE PAYMENT METHODS</h6>
+                    <div class="icons">
+                        <div id="icon-div">
+                            <img id="icon" src="/image/QR.jpg" alt="QR">
+                            <h6>QR</h6>
+                        </div>
+                        <div id="icon-div">
+                            <img id="icon" src="/image/ussd.png" alt="CARDS">
+                            <h6>CARDS</h6>
+                        </div>
+                        <div id="icon-div">
+                            <img id="icon" src="/image/ussd.png" alt="USSD">
+                            <h6>USSD</h6>
+                        </div>
+                        <div id="icon-div">
+                            <img id="icon" src="/image/Transfer.jpg" alt="TRANSFER">
+                            <h6>TRANSFER</h6>
+                        </div>
+                        <div id="icon-div">
+                            <img id="icon" src="/image/paycode.jpg" alt="PAYCODE">
+                            <h6>PAYCODE</h6>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>    
+        </div>
 
-
-        <section class="second-section">
-            <div class="text">
-                <h2>Your Smart POS is just a Few Clicks Away</h2>
-                <p>Let us help you kick-start the journey that's beyond collecting payments,
-                    please share your details here.
-                </p>
-            </div>
-
-            <form id="form">
-
-               <section class="names">
-
-                    <div class="formInput">
-                        <label for="first-name">First Name</label> <br>
+        <div class="second-section-div">
+            <section class="second-section">
+                <div class="text">
+                    <h2>Your Smart POS is just a Few Clicks Away</h2>
+                    <p>Let us help you kick-start the journey that's beyond collecting payments,
+                        please share your details here.
+                    </p>
+                </div>
+    
+                <form id="form">
+    
+                   <section class="names">
+    
+                        <div class="formInput">
+                            <label for="first-name">First Name</label> <br>
+                            <input 
+                                type="text" 
+                                name="firstName" 
+                                id="first-name" 
+                                placeholder="First Name"
+                                class="error"
+                                onblur="firstNameValueCheck()"
+                                onkeyup="firstNameValueCheck()"
+                            >
+                            <i class="fa-solid fa-circle-check"></i>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <small></small>
+                        </div>
+    
+                        <div class="formInput">
+                            <label for="last-name">Last Name</label> <br>
+                            <input 
+                                type="text" 
+                                name="lastName" 
+                                id="last-name" 
+                                placeholder="Last Name"
+                                onblur="lastNameValueCheck()"
+                                onkeyup="lastNameValueCheck()"
+                            >
+                            <i class="fa-solid fa-circle-check"></i>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <small></small>
+                        </div>
+                   </section>
+    
+          
+                   <div class="formInput">
+                        <label for="email">Email Address</label> <br>
                         <input 
-                            type="text" 
-                            name="firstName" 
-                            id="first-name" 
-                            placeholder="First Name"
-                            class="error"
-                            onblur="firstNameValueCheck()"
-                            onkeyup="firstNameValueCheck()"
+                            type="email" 
+                            name="email" 
+                            id="email"
+                            placeholder="Your Email Address"
+                            onblur="emailChangedValue()"
+                            onkeyup="emailChangedValue()"
                         >
                         <i class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <small></small>
-                    </div>
-
-                    <div class="formInput">
-                        <label for="last-name">Last Name</label> <br>
+                   </div>
+    
+            
+    
+                   <div class="formInput">
+                        <label for="number">Phone Number</label> <br>
                         <input 
-                            type="text" 
-                            name="lastName" 
-                            id="last-name" 
-                            placeholder="Last Name"
-                            onblur="lastNameValueCheck()"
-                            onkeyup="lastNameValueCheck()"
+                            type="tel" 
+                            name="number" 
+                            id="number" 
+                            placeholder="Phone Number"
+                            onblur="numberChangedValue()"
+                            onkeyup="numberChangedValue()"
+                            title="Format: xxxx-xxx-xxxx"
                         >
                         <i class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <small></small>
+                   </div>
+    
+            
+    
+    
+                   <div class="formInput">
+                        <label for="businessLocation"> Where Do You Sell? </label> <br>
+                        <select 
+                            name="businessLocation" 
+                            id="businessLocation"
+                            onblur="businessLocationValueCheck()"
+                            onchange="businessLocationValueCheck()"
+                        >
+                                <option value="" disabled selected>-select-</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Osun">Osun</option>
+                        </select>
+                        <small></small>
+                   </div>
+    
+            
+    
+                   <div class="formInput">
+                        <label for="businessType"> Business Type </label> <br>
+                        <select 
+                            name="businessType" 
+                            id="businessType"
+                            onblur="businessTypeValueCheck()"
+                            onchange="businessTypeValueCheck()"
+                        >
+                                <option value="" disabled selected> -select-</option>
+                                <option value="Trading">Trading</option>
+                                <option value="Transportation">Transportation</option>
+                        </select>
+                        <small></small>
+                   </div>
+                 
+    
+                   <div class="formInput">
+                        <label for="monthly-sales"> Average Monthly Sales/Turnover </label> <br>
+                        <select 
+                            name="monthly-sales" 
+                            id="monthly-sales"
+                            onblur="monthlySalesValueCheck()"
+                            onchange="monthlySalesValueCheck()"
+                        >
+                                <option value="" disabled selected>-select-</option>
+                                <option value="50%">50%</option>
+                                <option value="100%">100%</option>
+                        </select>
+                        <small></small>
+                   </div>
+    
+                   <div class="radio">
+                        <label>Will you be interested in integrating a Business Management Software?</label>
+                        <br>
+                        <input type="radio" id="yes" name="interest" value="Yes" onchange="validateRadioButtonsOnchange()"><label for="yes">Yes</label>
+                        <input type="radio" id="no" name="interest" value="No" onchange="validateRadioButtonsOnchange()"><label for="no"> No</label>
+                        <br>
+                        <small></small>
                     </div>
-               </section>
-
-      
-               <div class="formInput">
-                    <label for="email">Email Address</label> <br>
-                    <input 
-                        type="email" 
-                        name="email" 
-                        id="email"
-                        placeholder="Your Email Address"
-                        onblur="emailChangedValue()"
-                        onkeyup="emailChangedValue()"
-                    >
-                    <i class="fa-solid fa-circle-check"></i>
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                    <small></small>
-               </div>
-
-        
-
-               <div class="formInput">
-                    <label for="number">Phone Number</label> <br>
-                    <input 
-                        type="tel" 
-                        name="number" 
-                        id="number" 
-                        placeholder="Phone Number"
-                        onblur="numberChangedValue()"
-                        onkeyup="numberChangedValue()"
-                        title="Format: xxxx-xxx-xxxx"
-                    >
-                    <i class="fa-solid fa-circle-check"></i>
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                    <small></small>
-               </div>
-
-        
-
-
-               <div class="formInput">
-                    <label for="businessLocation"> Where Do You Sell? </label> <br>
-                    <select 
-                        name="businessLocation" 
-                        id="businessLocation"
-                        onblur="businessLocationValueCheck()"
-                        onchange="businessLocationValueCheck()"
-                    >
-                            <option value="" disabled selected>-select-</option>
-                            <option value="Lagos">Lagos</option>
-                            <option value="Oyo">Oyo</option>
-                            <option value="Osun">Osun</option>
-                    </select>
-                    <small></small>
-               </div>
-
-        
-
-               <div class="formInput">
-                    <label for="businessType"> Business Type </label> <br>
-                    <select 
-                        name="businessType" 
-                        id="businessType"
-                        onblur="businessTypeValueCheck()"
-                        onchange="businessTypeValueCheck()"
-                    >
-                            <option value="" disabled selected> -select-</option>
-                            <option value="Trading">Trading</option>
-                            <option value="Transportation">Transportation</option>
-                    </select>
-                    <small></small>
-               </div>
-             
-
-               <div class="formInput">
-                    <label for="monthly-sales"> Average Monthly Sales/Turnover </label> <br>
-                    <select 
-                        name="monthly-sales" 
-                        id="monthly-sales"
-                        onblur="monthlySalesValueCheck()"
-                        onchange="monthlySalesValueCheck()"
-                    >
-                            <option value="" disabled selected>-select-</option>
-                            <option value="50%">50%</option>
-                            <option value="100%">100%</option>
-                    </select>
-                    <small></small>
-               </div>
-
-               <div class="radio">
-                    <label>Will you be interested in integrating a Business Management Software?</label>
-                    <br>
-                    <input type="radio" id="yes" name="interest" value="Yes" onchange="validateRadioButtonsOnchange()"><label for="yes">Yes</label>
-                    <input type="radio" id="no" name="interest" value="No" onchange="validateRadioButtonsOnchange()"><label for="no"> No</label>
-                    <br>
-                    <small></small>
-                </div>
-               
-              
-
-               <div class="agree">
-                    <input type="checkbox" name="checkbox" id="checkbox" onchange="validateCheckboxOnchange()">
-                    <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy Policy</span></label>
-                    <small></small>
-               </div>
-               
-             
-               <br>
-
-               <button type="submit" id="submit">Submit</button>
-            </form>
-        </section>
+                   
+                  
+    
+                   <div class="agree">
+                        <input type="checkbox" name="checkbox" id="checkbox" onchange="validateCheckboxOnchange()">
+                        <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy Policy</span></label>
+                        <small></small>
+                   </div>
+                   
+                 
+                   <br>
+    
+                   <button type="submit" id="submit">Submit</button>
+                </form>
+            </section>
+        </div>
     </div>
 
     <script src="script.js"></script>

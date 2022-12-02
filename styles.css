@@ -13,12 +13,33 @@
 
 .container{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     min-height: 100vh;
+    position: relative;
+}
+
+.container .first-section-div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    position: fixed;
+    left: 0;
+    width: 50vw;
+}
+
+.container .second-section-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: absolute;
+    right: 0;
+    width: 50vw;
 }
 
 /* FIRST-SECTION */
-
 .container .first-section{
     display: flex;
     flex-direction: column;
@@ -225,8 +246,14 @@ select:focus{
 /* MEDIA QUERY */
 
 @media screen and (max-width: 768px) {
-    .container{
+    /* .container{
         flex-direction: column;
+    } */
+    .container .first-section-div {
+        display: none;
+    }
+    .container .second-section-div {
+        width: 100vw;
     }
 
     .container .first-section .footer .icons #icon-div{

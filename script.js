@@ -9,8 +9,6 @@ const monthlySales = document.getElementById('monthly-sales');
 // radio-buttons
 const radioBtns = document.getElementsByName('interest');
 const radioDiv = document.querySelector('.radio');
-const radioYes = document.getElementById('yes');
-const radioNo = document.getElementById('no');
 
 // check-box
 const checkbox = document.getElementById('checkbox');
@@ -19,6 +17,7 @@ const checkboxDiv = document.querySelector('.agree');
 //form-submit
 const submitBtn = document.getElementById('submit')
 const form = document.getElementById('form');
+
 
 
 form.addEventListener('submit', (e) => {
@@ -284,11 +283,11 @@ function storeInputValues(){
     localStorage.setItem('Business Type', `${businessType.value}`);
     localStorage.setItem('Average Monthly Sales', `${monthlySales.value}`);
 
-    if(radioYes.checked){
-        localStorage.setItem('Will you be interested in integrating a Business Management Software?', radioYes.value);
+    if(radioBtns[0].checked){
+        localStorage.setItem('Will you be interested in integrating a Business Management Software?', `${radioBtns[0].value}`)
     }
     else{
-        localStorage.setItem('Will you be interested in integrating a Business Management Software?', radioNo.value);
+        localStorage.setItem('Will you be interested in integrating a Business Management Software?', `${radioBtns[1].value}`)
     };
 
     localStorage.setItem('Do you agree to quickteller business privacy policy?', 'Yes');
@@ -300,16 +299,16 @@ function finalSubmit(){
     if(!firstName.value || !lastName.value || !email.value || !number.value
         || !businessLocation.value || !businessType.value || !monthlySales.value)
         {
-            console.log('input');
+            // console.log('input');
         return;
     }
-    else if(!radioYes.checked || !radioNo.checked){
-        console.log('radio');
-        return
+    if(!radioBtns[0].checked && !radioBtns[1].checked){
+        //  console.log('radio');
+         return
     }
-    else if(!checkbox.checked){
-        console.log('checkbox');
-        return
+    if(!checkbox.checked){
+    //    console.log('checkbox');
+       return
     }
     else{
         storeInputValues();
