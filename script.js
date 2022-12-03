@@ -19,7 +19,6 @@ const submitBtn = document.getElementById('submit')
 const form = document.getElementById('form');
 
 
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -124,10 +123,16 @@ function setErrorFor(input, message){
     const small = formInput.querySelector('small');
     small.innerText = message;
     small.style.color = '#e74c3c';
+
+    if(message){
+        formInput.classList.add('error');
+    }else{
+        formInput.classList.remove('error');
+    }
 };
 
 function setSuccessFor(input){
-    input.parentElement.classList.add('success');
+    input.parentElement.classList.add('success')
 };
 
 function removeSuccessFor(input){
@@ -151,6 +156,7 @@ function validPhoneNumber(number) {
 function firstNameValueCheck(){
     if(!firstName.value){
         setErrorFor(firstName, 'First name cannot be blank');
+        removeSuccessFor(firstName);
     }
     else{
         setErrorFor(firstName, '');
@@ -162,6 +168,7 @@ function firstNameValueCheck(){
 function lastNameValueCheck(){
     if(!lastName.value){
         setErrorFor(lastName, 'Last name cannot be blank');
+        removeSuccessFor(lastName);
     }
     else{
         setErrorFor(lastName, '');
@@ -174,16 +181,15 @@ function emailChangedValue(){
 
     if(!email.value){
         setErrorFor(email, 'Email cannot be blank');
-        submitBtn.disabled = true;
+        removeSuccessFor(email);
     }
-    else if(!validEmail(email.value)){
+    if(!validEmail(email.value)){
         setErrorFor(email, 'Invalid Email');
-        submitBtn.disabled = true;
+        removeSuccessFor(email);
     }
     else{
         setErrorFor(email, '');
         setSuccessFor(email);
-        submitBtn.disabled = false;
     }
 };
 
@@ -192,16 +198,15 @@ function numberChangedValue(){
 
     if(!number.value){
         setErrorFor(number, 'Include a phone number. Format: xxxx-xxx-xxxx');
-        submitBtn.disabled = true;
+        removeSuccessFor(number);
     }
-    else if(!validPhoneNumber(number.value)){
+    if(!validPhoneNumber(number.value)){
         setErrorFor(number, 'Invalid Phone Number. Format: xxxx-xxx-xxxx');
-        submitBtn.disabled = true;
+        removeSuccessFor(number);
     }
     else{
         setErrorFor(number, '');
         setSuccessFor(number);
-        submitBtn.disabled = false;
     }
 };
 
@@ -290,7 +295,7 @@ function storeInputValues(){
         localStorage.setItem('Will you be interested in integrating a Business Management Software?', `${radioBtns[1].value}`)
     };
 
-    localStorage.setItem('Do you agree to quickteller business privacy policy?', 'Yes');
+    localStorage.setItem('Do you agree to quickteller business privacy policy?', `${checkbox.value}`);
 };
 
 
@@ -299,15 +304,15 @@ function finalSubmit(){
     if(!firstName.value || !lastName.value || !email.value || !number.value
         || !businessLocation.value || !businessType.value || !monthlySales.value)
         {
-            // console.log('input');
         return;
     }
+    if(!validPhoneNumber(number.value) || !validEmail(email.value)){
+        return
+    }
     if(!radioBtns[0].checked && !radioBtns[1].checked){
-        //  console.log('radio');
          return
     }
     if(!checkbox.checked){
-    //    console.log('checkbox');
        return
     }
     else{

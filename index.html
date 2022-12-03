@@ -70,6 +70,7 @@
                                 class="error"
                                 onblur="firstNameValueCheck()"
                                 onkeyup="firstNameValueCheck()"
+                                onchange="firstNameValueCheck()"
                             >
                             <i class="fa-solid fa-circle-check"></i>
                             <i class="fa-solid fa-circle-exclamation"></i>
@@ -85,6 +86,7 @@
                                 placeholder="Last Name"
                                 onblur="lastNameValueCheck()"
                                 onkeyup="lastNameValueCheck()"
+                                onchange="lastNameValueCheck()"
                             >
                             <i class="fa-solid fa-circle-check"></i>
                             <i class="fa-solid fa-circle-exclamation"></i>
@@ -102,6 +104,7 @@
                             placeholder="Your Email Address"
                             onblur="emailChangedValue()"
                             onkeyup="emailChangedValue()"
+                            onchange="emailChangedValue()"
                         >
                         <i class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
@@ -119,6 +122,7 @@
                             placeholder="Phone Number"
                             onblur="numberChangedValue()"
                             onkeyup="numberChangedValue()"
+                            onchange="numberChangedValue()"
                             title="Format: xxxx-xxx-xxxx"
                         >
                         <i class="fa-solid fa-circle-check"></i>
@@ -190,7 +194,7 @@
                   
     
                    <div class="agree">
-                        <input type="checkbox" name="checkbox" id="checkbox" onchange="validateCheckboxOnchange()">
+                        <input type="checkbox" name="checkbox" id="checkbox" value="Yes" onchange="validateCheckboxOnchange()">
                         <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy Policy</span></label>
                         <small></small>
                    </div>
