@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <script src="https://kit.fontawesome.com/be3b38df61.js" crossorigin="anonymous"></script>
     <title>Application Form</title>
 </head>
+
 <body>
     <div class="container">
         <div class="first-section-div">
@@ -44,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-            </section>    
+            </section>
         </div>
 
         <div class="second-section-div">
@@ -55,154 +57,125 @@
                         please share your details here.
                     </p>
                 </div>
-    
+
+                <div class="stored-success">
+                    Your details have been saved.
+                </div>
+
+
                 <form id="form">
-    
-                   <section class="names">
-    
+
+                    <section class="names">
+
                         <div class="formInput">
                             <label for="first-name">First Name</label> <br>
-                            <input 
-                                type="text" 
-                                name="firstName" 
-                                id="first-name" 
-                                placeholder="First Name"
-                                class="error"
-                                onblur="firstNameValueCheck()"
-                                onkeyup="firstNameValueCheck()"
-                                onchange="firstNameValueCheck()"
-                            >
+                            <input type="text" name="firstName" id="first-name" placeholder="First Name" class="error"
+                                onblur="firstNameValueCheck()" onkeyup="firstNameValueCheck()"
+                                onchange="firstNameValueCheck()">
                             <i class="fa-solid fa-circle-check"></i>
                             <i class="fa-solid fa-circle-exclamation"></i>
                             <small></small>
                         </div>
-    
+
                         <div class="formInput">
                             <label for="last-name">Last Name</label> <br>
-                            <input 
-                                type="text" 
-                                name="lastName" 
-                                id="last-name" 
-                                placeholder="Last Name"
-                                onblur="lastNameValueCheck()"
-                                onkeyup="lastNameValueCheck()"
-                                onchange="lastNameValueCheck()"
-                            >
+                            <input type="text" name="lastName" id="last-name" placeholder="Last Name"
+                                onblur="lastNameValueCheck()" onkeyup="lastNameValueCheck()"
+                                onchange="lastNameValueCheck()">
                             <i class="fa-solid fa-circle-check"></i>
                             <i class="fa-solid fa-circle-exclamation"></i>
                             <small></small>
                         </div>
-                   </section>
-    
-          
-                   <div class="formInput">
+                    </section>
+
+
+                    <div class="formInput">
                         <label for="email">Email Address</label> <br>
-                        <input 
-                            type="email" 
-                            name="email" 
-                            id="email"
-                            placeholder="Your Email Address"
-                            onblur="emailChangedValue()"
-                            onkeyup="emailChangedValue()"
-                            onchange="emailChangedValue()"
-                        >
+                        <input type="email" name="email" id="email" placeholder="Your Email Address"
+                            onblur="emailChangedValue()" onkeyup="emailChangedValue()" onchange="emailChangedValue()">
                         <i class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <small></small>
-                   </div>
-    
-            
-    
-                   <div class="formInput">
+                    </div>
+
+
+
+                    <div class="formInput">
                         <label for="number">Phone Number</label> <br>
-                        <input 
-                            type="tel" 
-                            name="number" 
-                            id="number" 
-                            placeholder="Phone Number"
-                            onblur="numberChangedValue()"
-                            onkeyup="numberChangedValue()"
-                            onchange="numberChangedValue()"
-                            title="Format: xxxx-xxx-xxxx"
-                        >
+                        <input type="tel" name="number" id="number" placeholder="Phone Number"
+                            onblur="numberChangedValue()" onkeyup="numberChangedValue()" onchange="numberChangedValue()"
+                            title="Format: xxxx-xxx-xxxx">
                         <i class="fa-solid fa-circle-check"></i>
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <small></small>
-                   </div>
-    
-            
-    
-    
-                   <div class="formInput">
+                    </div>
+
+
+
+
+                    <div class="formInput">
                         <label for="businessLocation"> Where Do You Sell? </label> <br>
-                        <select 
-                            name="businessLocation" 
-                            id="businessLocation"
-                            onblur="businessLocationValueCheck()"
-                            onchange="businessLocationValueCheck()"
-                        >
-                                <option value="" disabled selected>-select-</option>
-                                <option value="Lagos">Lagos</option>
-                                <option value="Oyo">Oyo</option>
-                                <option value="Osun">Osun</option>
+                        <select name="businessLocation" id="businessLocation" onblur="businessLocationValueCheck()"
+                            onchange="businessLocationValueCheck()">
+                            <option value="" disabled selected>-select-</option>
+                            <option value="Lagos">Lagos</option>
+                            <option value="Oyo">Oyo</option>
+                            <option value="Osun">Osun</option>
                         </select>
                         <small></small>
-                   </div>
-    
-            
-    
-                   <div class="formInput">
+                    </div>
+
+
+
+                    <div class="formInput">
                         <label for="businessType"> Business Type </label> <br>
-                        <select 
-                            name="businessType" 
-                            id="businessType"
-                            onblur="businessTypeValueCheck()"
-                            onchange="businessTypeValueCheck()"
-                        >
-                                <option value="" disabled selected> -select-</option>
-                                <option value="Trading">Trading</option>
-                                <option value="Transportation">Transportation</option>
+                        <select name="businessType" id="businessType" onblur="businessTypeValueCheck()"
+                            onchange="businessTypeValueCheck()">
+                            <option value="" disabled selected> -select-</option>
+                            <option value="Trading">Trading</option>
+                            <option value="Transportation">Transportation</option>
                         </select>
                         <small></small>
-                   </div>
-                 
-    
-                   <div class="formInput">
+                    </div>
+
+
+                    <div class="formInput">
                         <label for="monthly-sales"> Average Monthly Sales/Turnover </label> <br>
-                        <select 
-                            name="monthly-sales" 
-                            id="monthly-sales"
-                            onblur="monthlySalesValueCheck()"
-                            onchange="monthlySalesValueCheck()"
-                        >
-                                <option value="" disabled selected>-select-</option>
-                                <option value="50%">50%</option>
-                                <option value="100%">100%</option>
+                        <select name="monthly-sales" id="monthly-sales" onblur="monthlySalesValueCheck()"
+                            onchange="monthlySalesValueCheck()">
+                            <option value="" disabled selected>-select-</option>
+                            <option value="50%">50%</option>
+                            <option value="100%">100%</option>
                         </select>
                         <small></small>
-                   </div>
-    
-                   <div class="radio">
+                    </div>
+
+                    <div class="radio">
                         <label>Will you be interested in integrating a Business Management Software?</label>
                         <br>
-                        <input type="radio" id="yes" name="interest" value="Yes" onchange="validateRadioButtonsOnchange()"><label for="yes">Yes</label>
-                        <input type="radio" id="no" name="interest" value="No" onchange="validateRadioButtonsOnchange()"><label for="no"> No</label>
+                        <input type="radio" id="yes" name="interest" value="Yes"
+                            onchange="validateRadioButtonsOnchange()"><label for="yes">Yes</label>
+                        <input type="radio" id="no" name="interest" value="No"
+                            onchange="validateRadioButtonsOnchange()"><label for="no"> No</label>
                         <br>
                         <small></small>
                     </div>
-                   
-                  
-    
-                   <div class="agree">
-                        <input type="checkbox" name="checkbox" id="checkbox" value="Yes" onchange="validateCheckboxOnchange()">
-                        <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy Policy</span></label>
+
+
+
+                    <div class="agree">
+                        <input type="checkbox" name="checkbox" id="checkbox" value="Yes"
+                            onchange="validateCheckboxOnchange()">
+                        <label for="checkbox"> I <strong>Agree</strong> to Quickteller Business' <span>Privacy
+                                Policy</span></label>
                         <small></small>
-                   </div>
-                   
-                 
-                   <br>
-    
-                   <button type="submit" id="submit">Submit</button>
+                    </div>
+
+
+                    <br>
+                    <!-- <marquee direction="right">You</marquee> -->
+                    <!-- <p contenteditable="true">I am here</p> -->
+                    <button type="submit" id="submit">Submit</button>
                 </form>
             </section>
         </div>
@@ -210,4 +183,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
